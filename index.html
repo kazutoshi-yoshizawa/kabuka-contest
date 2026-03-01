@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株価コンテスト</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      padding: 24px 16px 60px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+      color: #1a1a2e;
+    }
+
+    .updated {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 32px 0 12px;
+      color: #1a1a2e;
+      border-left: 4px solid #4a90d9;
+      padding-left: 10px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 28px 0 10px;
+      color: #333;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-size: 0.9rem;
+    }
+
+    thead th {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 12px 14px;
+      text-align: center;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 10px 14px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody tr:hover { background: #f9fbff; }
+
+    .total-row td {
+      background: #eef3fb;
+      font-weight: 700;
+      border-top: 2px solid #c0d4f0;
+    }
+
+    .plus  { color: #0a7c42; }
+    .minus { color: #c0392b; }
+
+    .rank-col { font-size: 1.1rem; }
+
+    .medal-1 { color: #d4a017; }
+    .medal-2 { color: #7f8c8d; }
+    .medal-3 { color: #a0522d; }
+
+    .section-divider {
+      border: none;
+      border-top: 2px dashed #dde3ec;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      table { font-size: 0.78rem; }
+      thead th, tbody td { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>📈 株価コンテスト</h1>
+<p class="updated">集計日：2026年3月1日</p>
+
+<!-- ===== 全員サマリー ===== -->
+<h2>全員サマリー</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>順位</th>
+      <th>名前</th>
+      <th>投資額</th>
+      <th>総評価額</th>
+      <th>総損益</th>
+      <th>総損益率</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rank-col medal-1">🥇 1位</td>
+      <td>慶子</td>
+      <td>52,180円</td>
+      <td>64,944円</td>
+      <td class="plus"><strong>+12,764円</strong></td>
+      <td class="plus"><strong>+24.46%</strong></td>
+    </tr>
+    <tr>
+      <td class="rank-col medal-2">🥈 2位</td>
+      <td>健人</td>
+      <td>49,821円</td>
+      <td>56,814円</td>
+      <td class="plus"><strong>+6,993円</strong></td>
+      <td class="plus"><strong>+14.04%</strong></td>
+    </tr>
+    <tr>
+      <td class="rank-col medal-3">🥉 3位</td>
+      <td>亮太</td>
+      <td>51,692円</td>
+      <td>54,480円</td>
+      <td class="plus"><strong>+2,788円</strong></td>
+      <td class="plus"><strong>+5.39%</strong></td>
+    </tr>
+    <tr>
+      <td class="rank-col">4位</td>
+      <td>拓哉</td>
+      <td>50,546円</td>
+      <td>51,245円</td>
+      <td class="plus"><strong>+699円</strong></td>
+      <td class="plus"><strong>+1.38%</strong></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<hr class="section-divider">
+
+<!-- ===== 慶子 ===== -->
+<h3>🥇 1位｜慶子</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>銘柄</th><th>投資額</th><th>評価額</th><th>損益</th><th>損益率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>サントリーBF</td><td>4,883円</td><td>4,917円</td><td class="plus">+34円</td><td class="plus">+0.70%</td></tr>
+    <tr><td>クラシコム</td><td>10,809円</td><td>19,350円</td><td class="plus">+8,541円</td><td class="plus">+79.02%</td></tr>
+    <tr><td>良品計画</td><td>14,910円</td><td>17,985円</td><td class="plus">+3,075円</td><td class="plus">+20.62%</td></tr>
+    <tr><td>iFreeNEXT FANG+①</td><td>12,578円</td><td>11,361円</td><td class="minus">-1,217円</td><td class="minus">-9.68%</td></tr>
+    <tr><td>iFreeNEXT FANG+②</td><td>9,000円</td><td>11,331円</td><td class="plus">+2,331円</td><td class="plus">+25.90%</td></tr>
+    <tr class="total-row"><td><strong>合計</strong></td><td><strong>52,180円</strong></td><td><strong>64,944円</strong></td><td class="plus"><strong>+12,764円</strong></td><td class="plus"><strong>+24.46%</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===== 健人 ===== -->
+<h3>🥈 2位｜健人</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>銘柄</th><th>投資額</th><th>評価額</th><th>損益</th><th>損益率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>トヨタ自</td><td>6,144円</td><td>7,650円</td><td class="plus">+1,506円</td><td class="plus">+24.51%</td></tr>
+    <tr><td>良品計画</td><td>5,964円</td><td>7,194円</td><td class="plus">+1,230円</td><td class="plus">+20.62%</td></tr>
+    <tr><td>スクエニHD</td><td>6,158円</td><td>5,149円</td><td class="minus">-1,009円</td><td class="minus">-16.39%</td></tr>
+    <tr><td>eMAXIS Slim 米国株式(S&amp;P500)</td><td>13,755円</td><td>14,417円</td><td class="plus">+662円</td><td class="plus">+4.81%</td></tr>
+    <tr><td>iFreeNEXT FANG+インデックス</td><td>17,800円</td><td>22,404円</td><td class="plus">+4,604円</td><td class="plus">+25.87%</td></tr>
+    <tr class="total-row"><td><strong>合計</strong></td><td><strong>49,821円</strong></td><td><strong>56,814円</strong></td><td class="plus"><strong>+6,993円</strong></td><td class="plus"><strong>+14.04%</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===== 亮太 ===== -->
+<h3>🥉 3位｜亮太</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>銘柄</th><th>投資額</th><th>評価額</th><th>損益</th><th>損益率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>INPEX</td><td>2,018円</td><td>3,800円</td><td class="plus">+1,782円</td><td class="plus">+88.31%</td></tr>
+    <tr><td>ソニーグループ</td><td>2,850円</td><td>3,643円</td><td class="plus">+793円</td><td class="plus">+27.82%</td></tr>
+    <tr><td>三菱重工</td><td>2,867円</td><td>5,014円</td><td class="plus">+2,147円</td><td class="plus">+74.89%</td></tr>
+    <tr><td>ホンダ</td><td>1,475円</td><td>1,584円</td><td class="plus">+109円</td><td class="plus">+7.35%</td></tr>
+    <tr><td>ソニーFG</td><td>739円</td><td>159円</td><td class="minus">-580円</td><td class="minus">-78.39%</td></tr>
+    <tr><td>iFreeNEXT FANG+インデックス</td><td>41,743円</td><td>40,280円</td><td class="minus">-1,463円</td><td class="minus">-3.50%</td></tr>
+    <tr class="total-row"><td><strong>合計</strong></td><td><strong>51,692円</strong></td><td><strong>54,480円</strong></td><td class="plus"><strong>+2,788円</strong></td><td class="plus"><strong>+5.39%</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===== 拓哉 ===== -->
+<h3>4位｜拓哉</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>銘柄</th><th>投資額</th><th>評価額</th><th>損益</th><th>損益率</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>東北電力</td><td>5,634円</td><td>6,477円</td><td class="plus">+843円</td><td class="plus">+14.95%</td></tr>
+    <tr><td>スクエニHD</td><td>6,926円</td><td>7,723円</td><td class="plus">+797円</td><td class="plus">+11.50%</td></tr>
+    <tr><td>エヌビディア</td><td>30,686円</td><td>27,607円</td><td class="minus">-3,079円</td><td class="minus">-10.03%</td></tr>
+    <tr><td>eMAXIS Slim 米国株式(S&amp;P500)</td><td>7,300円</td><td>9,438円</td><td class="plus">+2,138円</td><td class="plus">+29.29%</td></tr>
+    <tr class="total-row"><td><strong>合計</strong></td><td><strong>50,546円</strong></td><td><strong>51,245円</strong></td><td class="plus"><strong>+699円</strong></td><td class="plus"><strong>+1.38%</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>
