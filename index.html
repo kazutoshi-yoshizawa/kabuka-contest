@@ -307,13 +307,13 @@
     .chart-bar {
       width: 100%;
       background: currentColor;
-      animation: bar-grow-v 1.2s steps(20) forwards;
+      animation: bar-grow-v 1.2s steps(20) infinite;
       height: 0;
     }
 
     @keyframes bar-grow-v {
-      from { height: 0; }
-      to   { height: var(--bar-h); }
+      0%, 100% { height: 0; }
+      50% { height: var(--bar-h); }
     }
 
     .bar-1 { color: #FFD700; }
